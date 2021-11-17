@@ -3,6 +3,11 @@ class PersonCard extends Component {
 	constructor(props) {
 		super(props);
 		const { firstName, lastName, age, hairColor } = props;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.age = age;
+		this.hairColor = hairColor;
+
 		this.state = {
 			age: this.props.age,
 		};
@@ -16,14 +21,14 @@ class PersonCard extends Component {
 		return (
 			<div className='Person'>
 				<h1>
-					{this.props.lastName}, {this.props.firstName}
+					{this.lastName}, {this.firstName}
 				</h1>
 				<p>Age: {this.state.age}</p>
-				<p>Hair Color: {this.props.hairColor}</p>
+				<p>Hair Color: {this.hairColor}</p>
 				<button
 					className='btn btn-dark btn-outline-light'
 					onClick={this.birthday}>
-					Happy B-Day {this.props.firstName}!!!
+					Happy B-Day {this.firstName}!!!
 				</button>
 			</div>
 		);
